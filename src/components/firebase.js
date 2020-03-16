@@ -1,21 +1,11 @@
 import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firebase-firestore'
-
-const config = {
-	apiKey: "AIzaSyAb_LpiJ_upO5A6_auaHZGme2nCSVFceTw",
-	authDomain: "fir-test-b4660.firebaseapp.com",
-	databaseURL: "https://fir-test-b4660.firebaseio.com",
-	projectId: "fir-test-b4660",
-	storageBucket: "fir-test-b4660.appspot.com",
-	messagingSenderId: "437186903983",
-	appId: "1:437186903983:web:db7441aecc7c91f790b95a",
-	measurementId: "G-PQPK4KKMSS"
-}
+import {firebaseConfig} from '../.secrets'
 
 class Firebase {
 	constructor() {
-		app.initializeApp(config)
+		app.initializeApp(firebaseConfig)
 		this.auth = app.auth()
 		this.db = app.firestore()
 	}
