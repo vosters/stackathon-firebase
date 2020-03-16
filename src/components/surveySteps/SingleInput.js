@@ -23,7 +23,7 @@ const SingleInput = props => {
           noValidate
           autoComplete="off"
         >
-          <TextField id="standard-basic" name={props.question.name} value={props.state[props.question.name]}label={props.question.label} onChange={update}/>
+          <TextField fullWidth id="standard-basic" name={props.question.name} value={props.state[props.question.name]}label={props.question.label} onChange={update}/>
         </form>
         
         <Stats step={1} {...props} />

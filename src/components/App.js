@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { Landing, Dashboard, Login, Register } from "./";
+import { Landing, Dashboard, Login, Register, Purchase } from "./";
 import Survey from "./surveySteps";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { CssBaseline, CircularProgress } from "@material-ui/core";
@@ -28,6 +28,7 @@ export default function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/survey" component={Survey} />
+          <Route exact path="/purchase" component={Purchase} />
         </Switch>
       </Router>
     </MuiThemeProvider>

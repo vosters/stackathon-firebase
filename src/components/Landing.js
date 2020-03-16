@@ -15,17 +15,17 @@ function Landing(props) {
 					<VerifiedUserOutlined />
 				</Avatar>
 				<Typography component="h1" variant="h5" >
-					Get in the Game
+					Get A Custom Mental Health Gameplan
 				</Typography>
 				<Button
 					type="submit"
 					fullWidth
 					variant="contained"
-					color="secondary"
+					color="primary"
 					component={Link}
 					to="/survey"
 					className={classes.submit}>
-					Join The League
+					Start Survey
           		</Button>
 			</Paper>
 		</main>

@@ -8,21 +8,24 @@ const Progress = props => {
   const [completed, setCompleted] = React.useState(0);
 
   React.useEffect(() => {
-    function progress() {
-      setCompleted(oldCompleted => {
-        if (oldCompleted === 100) {
-            props.nextStep();
-            clearInterval(timer);
-        }
-        const diff = Math.random() * 10;
-        return Math.min(oldCompleted + diff, 100);
-      });
+    
+    if (props.isActive) {
+      function progress() {
+        setCompleted(oldCompleted => {
+          if (oldCompleted === 100) {
+              props.nextStep();
+              clearInterval(timer);
+          }
+          const diff = Math.random() * 10;
+          return Math.min(oldCompleted + diff, 100);
+        });
+      }
+      
+      const timer = setInterval(progress, 500);
+      return () => {
+        clearInterval(timer);
+      };
     }
-
-    const timer = setInterval(progress, 500);
-    return () => {
-      clearInterval(timer);
-    };
   }, []);
 
   return (
